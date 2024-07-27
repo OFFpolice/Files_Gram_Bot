@@ -57,6 +57,6 @@ async def cmd_start(message: types.Message):
             bot_username = bot_info.username
 
             await message.answer(
-                f"<b>Файл не найден.</b>\n\n<i>Но вы можете отправить мне свой файл и я сгенерирую для вас ссылку для доступа к вашему файлу.</i>\n\n/privacy — <a href=\'https://t.me/{bot_username}?start=privacy'>Политика конфиденциальности</a>\n/help — <a href=\'https://t.me/{bot_username}?start=help'>Помощь</a>",
+                f"<b>Файл не найден.</b>\n\n<i>Но вы можете отправить мне свой файл и я сгенерирую для вас ссылку для доступа к вашему файлу в любое время и из любого места.</i>\n\n/privacy — <a href=\'https://t.me/{bot_username}?start=privacy'>Политика конфиденциальности</a>\n/help — <a href=\'https://t.me/{bot_username}?start=help'>Помощь</a>",
                 parse_mode="HTML"
             )
