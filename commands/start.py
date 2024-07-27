@@ -18,7 +18,7 @@ async def cmd_start(message: types.Message):
             file_id, file_type = file_info
 
             await message.answer(
-                "<b>Отправляю файл...</b>",
+                "<b>Отправляю файл...</b>\nКанал: @OFFpoliceChannel",
                 parse_mode="HTML"
             )
 
