@@ -9,10 +9,12 @@ from commands.help import cmd_help
 from commands.privacy import cmd_privacy
 
 from handlers.video import new_video
-from handlers.audio import new_audio
 from handlers.photo import new_photo
+from handlers.voice import new_voice
+from handlers.audio import new_audio
 from handlers.animation import new_animation
 from handlers.document import new_document
+from handlers.note_video import new_video_note
 
 
 async def register_commands():
@@ -36,12 +38,16 @@ async def register_handlers():
         content_types=types.ContentTypes.VIDEO
     )
     dp.register_message_handler(
-        new_audio,
-        content_types=types.ContentTypes.AUDIO
-    )
-    dp.register_message_handler(
         new_photo,
         content_types=types.ContentTypes.PHOTO
+    )
+    dp.register_message_handler(
+        new_voice,
+        content_types=types.ContentTypes.VOICE
+    )
+    dp.register_message_handler(
+        new_audio,
+        content_types=types.ContentTypes.AUDIO
     )
     dp.register_message_handler(
         new_animation,
@@ -50,6 +56,10 @@ async def register_handlers():
     dp.register_message_handler(
         new_document,
         content_types=types.ContentTypes.DOCUMENT
+    )
+    dp.register_message_handler(
+        new_video_note,
+        content_types=types.ContentTypes.VIDEO_NOTE
     )
 
 
