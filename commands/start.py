@@ -18,7 +18,7 @@ async def cmd_start(message: types.Message):
             file_id, file_type = file_info
 
             await message.answer(
-                "<b>Отправляю файл...</b>\nКанал: @OFFpoliceChannel",
+                "<b>Отправляю файл...</b>\n<b><i>Powered by: @OFFpolice2069</i></b>",
                 parse_mode="HTML"
             )
 
@@ -28,17 +28,23 @@ async def cmd_start(message: types.Message):
                 )
                 await message.answer_video(file_id)
 
-            elif file_type == "audio":
-                await message.answer_chat_action(
-                    action="upload_audio"
-                )
-                await message.answer_audio(file_id)
-
             elif file_type == "photo":
                 await message.answer_chat_action(
                     action="upload_photo"
                 )
                 await message.answer_photo(file_id)
+
+            elif file_type == "voice":
+                await message.answer_chat_action(
+                    action="upload_voice"
+                )
+                await message.answer_voice(file_id)
+
+            elif file_type == "audio":
+                await message.answer_chat_action(
+                    action="upload_audio"
+                )
+                await message.answer_audio(file_id)
 
             elif file_type == "animation":
                 await message.answer_chat_action(
@@ -51,6 +57,12 @@ async def cmd_start(message: types.Message):
                     action="upload_document"
                 )
                 await message.answer_document(file_id)
+
+            elif file_type == "video_note":
+                await message.answer_chat_action(
+                    action="upload_video_note"
+                )
+                await message.answer_video_note(file_id)
 
         else:
             bot_info = await bot.get_me()
