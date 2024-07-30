@@ -15,7 +15,14 @@ load_dotenv(dotenv_path)
 API_TOKEN = os.environ.get("API_TOKEN")
 
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    filemode="a",
+    filename="run.log"
+)
+
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 dp.middleware.setup(LoggingMiddleware())
-logging.basicConfig(level=logging.INFO)
