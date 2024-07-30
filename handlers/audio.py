@@ -18,9 +18,6 @@ async def new_audio(message: types.Message):
     keyboard.add(
         types.InlineKeyboardButton(text="🔁 Переслать...", url=f"https://t.me/share/url?url={link}")
     )
-    await message.answer_chat_action(
-        action="upload_audio"
-    )
     await message.answer_audio(
         file_id,
         caption=f"✅ <b>Аудио успешно загружено!</b>\n\n🔗 <b>Вот ваша ссылка:</b>\n<code>{link}</code>",

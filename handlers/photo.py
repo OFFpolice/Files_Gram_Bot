@@ -18,9 +18,6 @@ async def new_photo(message: types.Message):
     keyboard.add(
         types.InlineKeyboardButton(text="🔁 Переслать...", url=f"https://t.me/share/url?url={link}")
     )
-    await message.answer_chat_action(
-        action="upload_photo"
-    )
     await message.answer_photo(
         file_id,
         caption=f"✅ <b>Фото успешно загружено!</b>\n\n🔗 <b>Вот ваша ссылка:</b>\n<code>{link}</code>",

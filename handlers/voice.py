@@ -18,9 +18,6 @@ async def new_voice(message: types.Message):
     keyboard.add(
         types.InlineKeyboardButton(text="🔁 Переслать...", url=f"https://t.me/share/url?url={link}")
     )
-    await message.answer_chat_action(
-        action="upload_voice"
-    )
     await message.answer_voice(
         file_id,
         caption=f"✅ <b>Голосовое сообщение успешно загружено!</b>\n\n🔗 <b>Вот ваша ссылка:</b>\n<code>{link}</code>",

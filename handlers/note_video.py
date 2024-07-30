@@ -18,9 +18,6 @@ async def new_video_note(message: types.Message):
     keyboard.add(
         types.InlineKeyboardButton(text="🔁 Переслать...", url=f"https://t.me/share/url?url={link}")
     )
-    await message.answer_chat_action(
-        action="upload_video_note"
-    )
     await message.answer_video_note(
         file_id,
         reply_markup=keyboard
